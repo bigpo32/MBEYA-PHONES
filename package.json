@@ -1,11 +1,16 @@
 {
   "name": "mbeya-phones",
   "version": "1.0.0",
+  "description": "Mbeya Phones Website",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
     "express": "^5.2.1"
   }
 }

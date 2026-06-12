@@ -1,23 +1,12 @@
-<<<<<<< HEAD
-function buyPhone(phoneName) {
-  fetch("/buy", {
-    method: "POST",
-    body: JSON.stringify({ phone: phoneName }),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.json())
-  .then(data => alert("Order confirmed: " + data.message))
-  .catch(err => alert("Error: " + err));
+function buyPhone(phone) {
+
+    const phoneNumber = "255742947568";
+
+    const message =
+        `Habari Mbeya Phones, nataka kununua ${phone}`;
+
+    const whatsappURL =
+        `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+
+    window.open(whatsappURL, "_blank");
 }
-=======
-function buyPhone(phoneName) {
-  fetch("/buy", {
-    method: "POST",
-    body: JSON.stringify({ phone: phoneName }),
-    headers: { "Content-Type": "application/json" }
-  })
-  .then(res => res.json())
-  .then(data => alert("Order confirmed: " + data.message))
-  .catch(err => alert("Error: " + err));
-}
->>>>>>> 1ab945a271670f2b7397e53e2797301d867e8bd5

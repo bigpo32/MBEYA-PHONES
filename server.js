@@ -1,25 +1,28 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
+const bodyParser = require("body-parser");
+
 const app = express();
 
-// Render automatically sets PORT, so we use process.env.PORT
-const PORT = process.env.PORT || 3000;
+app.use(cors());
+app.use(bodyParser.json());
+app.use(express.static("public"));
 
-// Middleware
-app.use(express.json());
-app.use(express.static(__dirname));
-
-// Root route → serve index.html
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+app.get("/", (req, res) => {
+    res.send("Mbeya Phones Backend Running");
 });
 
-// Example API route → handle phone orders
-app.post('/buy', (req, res) => {
-  const { phone } = req.body;
-  res.json({ message: `Order received for ${phone}` });
+app.post("/buy", (req, res) => {
+    const { phone } = req.body;
+
+    console.log("Customer ordered:", phone);
+
+    res.json({
+        success: true,
+        message: `${phone} order received`
+    });
 });
 
-// Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(3000, () => {
+    console.log("Server running on port 3000");
 });

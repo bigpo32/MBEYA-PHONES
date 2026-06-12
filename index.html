@@ -82,7 +82,21 @@
     <p>&copy; 2026 Mbeya Phones</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="script.js"></script> 
+  <script>
+function buyPhone(phone) {
+
+    const phoneNumber = "255742947568";
+
+    const message =
+        `Habari Mbeya Phones, nataka kununua ${phone}`;
+
+    window.open(
+      `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+}
+</script>
 </body>
 </html>
 <section id="contact">
